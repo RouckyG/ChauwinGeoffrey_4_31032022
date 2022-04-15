@@ -14,7 +14,7 @@
   <body>
     <div class="topnav" id="myTopnav">
       <div class="header-logo">
-        <img alt="logo" src="Logo.png" width="auto" height="auto" />
+        <img alt="logo" src="Logo.png"/>
       </div>
       <div class="main-navbar">
         <a href="#" class="active"><span>Accueil</span></a>
@@ -27,7 +27,6 @@
         </a>
       </div>
     </div>
-  </div>
     <main>
       <div class="hero-section">
         <div class="hero-content">
@@ -68,9 +67,8 @@
                   type="text"
                   id="first"
                   name="first"
-                  minlength="2"
-                  required
                 /><br>
+                <span class="errorMessage" id="firstError">Votre prénom doit contenir au moins 2 lettres</span>
               </div>
               <div class="formData">
                 <label for="last">Nom</label><br>
@@ -79,19 +77,18 @@
                   type="text"
                   id="last"
                   name="last"
-                  minlength="2"
-                  required
                   /><br>
+                <span class="errorMessage" id="lastError">Votre nom doit contenir au moins 2 lettres</span>
               </div>
               <div class="formData">
                 <label for="email">E-mail</label><br>
                 <input
                   class="text-control"
-                  type="email"
+                  type="text"
                   id="email"
                   name="email"
-                  required
                   /><br>
+                <span class="errorMessage" id="emailError">Votre email doit être valide</span>
               </div>
               <div class="formData">
                 <label for="birthdate">Date de naissance</label><br>
@@ -100,8 +97,8 @@
                   type="date"
                   id="birthdate"
                   name="birthdate"
-                  required
                   /><br>
+                <span class="errorMessage" id="birthdateError">Vous devez avoir au moins 16 ans</span>
               </div>
               <div class="formData">
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
@@ -110,9 +107,8 @@
                   class="text-control" 
                   id="quantity" 
                   name="quantity" 
-                  min="0" 
-                  max="99"
                 >
+                <span class="errorMessage" id="quantityError">Veuillez selectionner un nombre entre 0 et 99</span>
               </div>
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
               <div class="formData">
@@ -182,6 +178,8 @@
                   <span class="checkbox-icon"></span>
                   Portland</label
                 >
+                <br>
+                <span class="errorMessage" id="locationError">Veuillez selectionner un lieu</span>
               </div>
               <div class="formData">
                 <input
@@ -189,13 +187,13 @@
                   type="checkbox"
                   id="checkbox1"
                   checked
-                  required
                 />
                 <label class="checkbox2-label" for="checkbox1">
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
                 <br>
+                <span class="errorMessage" id="checkbox1Error">Les conditions d'utilisation doivent être accepter</span>
                 <input 
                   class="checkbox-input" 
                   type="checkbox" 
@@ -208,14 +206,20 @@
                 <br>
               </div>
               <input
-                class="btn-submit"
+                class="btn-submit button"
                 type="submit"
-                class="button"
                 value="C'est parti"
               />
-              <span id="modalMessage"></span>
             </form>
-          </div>
+            <div id="modalSuccess">
+              <p class="modalMessage">Merci pour votre inscription</p>
+              <input
+                class="btn-submit button"
+                type="submit"
+                value="fermer"
+              />
+            </div>
+            </div>
         </div>
       </div>
     </main>
