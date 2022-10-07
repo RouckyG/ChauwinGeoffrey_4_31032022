@@ -78,14 +78,16 @@ function validate() {
     last.style.border = "none";
   }
 
-  if (!email.value.split("").includes("@")){
-    isValid = false;
-    emailError.style.display='block';
-    email.style.border = "1px solid red";
+  const regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+
+  if(!email.value.match(regex)){
+      isValid = false;
+      emailError.style.display ='block';
+      email.style.border = "1px solid red";
   }
   else{
-    emailError.style.display='none';
-    email.style.border = "none";
+      emailError.style.display ='none';
+      email.style.border = "none";
   }
 
   if(birthdate.value === ""){
