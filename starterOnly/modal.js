@@ -91,6 +91,7 @@ function validate() {
   }
 
   if(birthdate.value === ""){
+    isValid = false;
     birthdateError.style.display='block';
     birthdate.style.border = "1px solid red";
     birthdateError.textContent = "Vous devez entrer votre date de naissance.";
@@ -148,6 +149,7 @@ function validate() {
   if(isValid){
     form.style.display = "none";
     modalSuccess.style.display = "block";
+    form.reset()
   }
 
   return false;
